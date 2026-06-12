@@ -1,0 +1,41 @@
+<view class="page-shell story-page" wx:if="{{city && story}}">
+  <custom-nav showBack></custom-nav>
+
+  <view class="story-hero fade-in-up">
+    <view class="{{bookmarkClass}}" bindtap="handleToggleSaved">
+      <view class="bookmark-mark"></view>
+    </view>
+    <text class="story-hero__kicker sans-caption">{{city.englishName}}</text>
+    <text class="story-hero__title serif-display">{{story.title}}</text>
+    <text class="story-hero__subtitle">{{story.subtitle}}</text>
+  </view>
+
+  <view class="section-shell">
+    <image class="story-cover fade-in-up" src="{{story.image}}" mode="aspectFill"></image>
+    <text class="story-excerpt fade-in-up">{{story.excerpt}}</text>
+
+    <!-- 正文第一部分：叙事段落 -->
+    <view class="story-article fade-in-up">
+      <block wx:for="{{story.content}}" wx:key="index">
+        <text class="story-article__paragraph editor-copy">{{item}}</text>
+      </block>
+    </view>
+
+    <!-- 画廊：图片穿插 -->
+    <view class="story-gallery fade-in-up">
+      <block wx:for="{{story.gallery}}" wx:key="index">
+        <image class="story-gallery__image" src="{{item}}" mode="aspectFill"></image>
+      </block>
+    </view>
+
+    <!-- 扩展内容：人文历史深度段落 -->
+    <view class="story-expanded fade-in-up" wx:if="{{story.expanded && story.expanded.length}}">
+      <block wx:for="{{story.expanded}}" wx:key="heading">
+        <view class="story-section">
+          <text class="story-section__heading serif-display">{{item.heading}}</text>
+          <text class="story-section__body editor-copy">{{item.body}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

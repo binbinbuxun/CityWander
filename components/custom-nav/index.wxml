@@ -1,0 +1,91 @@
+<view wx:if="{{fixed && transparent}}" class="nav-shell nav-shell--fixed nav-shell--transparent" style="padding-top: {{statusBarHeight}}px;">
+  <view
+    class="nav-row"
+    style="height: {{contentHeight}}px; margin-bottom: {{bottomGap}}px;"
+  >
+    <view class="nav-side nav-side--left">
+      <view
+        wx:if="{{showBack}}"
+        class="back-hit"
+        bindtap="handleBack"
+        style="height: {{contentHeight}}px; width: {{contentHeight}}px;"
+      >
+        <view wx:if="{{light}}" class="back-arrow back-arrow--light"></view>
+        <view wx:else class="back-arrow"></view>
+      </view>
+    </view>
+
+    <view wx:if="{{title || subtitle}}" class="nav-center">
+      <text wx:if="{{light}}" class="nav-title nav-title--light">{{title}}</text>
+      <text wx:else class="nav-title">{{title}}</text>
+      <text wx:if="{{subtitle && light}}" class="nav-subtitle nav-subtitle--light">
+        {{subtitle}}
+      </text>
+      <text wx:elif="{{subtitle}}" class="nav-subtitle">{{subtitle}}</text>
+    </view>
+
+    <view class="nav-side" style="width: {{capsuleWidth}}px;"></view>
+  </view>
+</view>
+
+<view wx:elif="{{fixed}}" class="nav-shell nav-shell--fixed" style="padding-top: {{statusBarHeight}}px;">
+  <view
+    class="nav-row"
+    style="height: {{contentHeight}}px; margin-bottom: {{bottomGap}}px;"
+  >
+    <view class="nav-side nav-side--left">
+      <view
+        wx:if="{{showBack}}"
+        class="back-hit"
+        bindtap="handleBack"
+        style="height: {{contentHeight}}px; width: {{contentHeight}}px;"
+      >
+        <view wx:if="{{light}}" class="back-arrow back-arrow--light"></view>
+        <view wx:else class="back-arrow"></view>
+      </view>
+    </view>
+
+    <view wx:if="{{title || subtitle}}" class="nav-center">
+      <text wx:if="{{light}}" class="nav-title nav-title--light">{{title}}</text>
+      <text wx:else class="nav-title">{{title}}</text>
+      <text wx:if="{{subtitle && light}}" class="nav-subtitle nav-subtitle--light">
+        {{subtitle}}
+      </text>
+      <text wx:elif="{{subtitle}}" class="nav-subtitle">{{subtitle}}</text>
+    </view>
+
+    <view class="nav-side" style="width: {{capsuleWidth}}px;"></view>
+  </view>
+</view>
+
+<view wx:else class="nav-shell" style="padding-top: {{statusBarHeight}}px;">
+  <view
+    class="nav-row"
+    style="height: {{contentHeight}}px; margin-bottom: {{bottomGap}}px;"
+  >
+    <view class="nav-side nav-side--left">
+      <view
+        wx:if="{{showBack}}"
+        class="back-hit"
+        bindtap="handleBack"
+        style="height: {{contentHeight}}px; width: {{contentHeight}}px;"
+      >
+        <view wx:if="{{light}}" class="back-arrow back-arrow--light"></view>
+        <view wx:else class="back-arrow"></view>
+      </view>
+    </view>
+
+    <view wx:if="{{title || subtitle}}" class="nav-center">
+      <text wx:if="{{light}}" class="nav-title nav-title--light">{{title}}</text>
+      <text wx:else class="nav-title">{{title}}</text>
+      <text wx:if="{{subtitle && light}}" class="nav-subtitle nav-subtitle--light">
+        {{subtitle}}
+      </text>
+      <text wx:elif="{{subtitle}}" class="nav-subtitle">
+        {{subtitle}}
+      </text>
+    </view>
+
+    <view class="nav-side" style="width: {{capsuleWidth}}px;"></view>
+  </view>
+</view>

@@ -1,0 +1,211 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(224, 215, 198, 0.55), transparent 24%),
+    radial-gradient(circle at 84% 72%, rgba(225, 215, 190, 0.4), transparent 26%),
+    #f9f8f6;
+}
+.home-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  z-index: 20;
+}
+.home-nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.index-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rpx;
+  background: rgba(249, 248, 246, 0.65);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+}
+.index-trigger__icon {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+.cover-swiper {
+  height: 100vh;
+}
+.cover-slide {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.cover-stage {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(145deg, #d6d0c8, #ebe6de);
+}
+.cover-stage__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cover-stage__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.12), rgba(8, 8, 8, 0.4));
+}
+.cover-stage__copy {
+  position: absolute;
+  left: 40rpx;
+  right: 40rpx;
+  bottom: 180rpx;
+}
+.cover-stage__cn {
+  display: block;
+  font-size: 80rpx;
+  color: rgba(249, 248, 246, 0.96);
+}
+.cover-stage__en {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 30rpx;
+  line-height: 1.2;
+  color: rgba(249, 248, 246, 0.76);
+  letter-spacing: 10rpx;
+}
+.cover-stage__slogan {
+  display: block;
+  margin-top: 22rpx;
+  width: 68%;
+  font-size: 30rpx;
+  line-height: 1.9;
+  color: rgba(249, 248, 246, 0.76);
+  letter-spacing: 2rpx;
+}
+.cover-stage__action {
+  margin-top: 38rpx;
+  width: 208rpx;
+  height: 82rpx;
+  border-radius: 999rpx;
+  background: rgba(249, 248, 246, 0.58);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border: 0.5px solid rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-stage__action-text {
+  font-size: 30rpx;
+  color: #2a2a2a;
+  letter-spacing: 8rpx;
+}
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 240, 232, 0.78);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+  z-index: 30;
+}
+.drawer-overlay--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.drawer-panel {
+  height: 100%;
+  padding: 120rpx 32rpx 42rpx;
+  background: rgba(249, 248, 246, 0.96);
+  transform: translateX(-100%);
+  transition: transform 300ms ease;
+}
+.drawer-overlay--open .drawer-panel {
+  transform: translateX(0);
+}
+.drawer-header {
+  padding: 50rpx 8rpx 28rpx;
+}
+.drawer-header__title {
+  display: block;
+  font-size: 72rpx;
+  line-height: 1.08;
+  color: #2a2a2a;
+}
+.drawer-list {
+  height: calc(100vh - 272rpx);
+}
+.drawer-card {
+  display: flex;
+  align-items: center;
+  padding: 22rpx;
+  margin-bottom: 28rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.03);
+}
+.drawer-card__thumb {
+  width: 192rpx;
+  height: 134rpx;
+  border-radius: 16rpx;
+  flex-shrink: 0;
+}
+.drawer-card__body {
+  flex: 1;
+  padding: 0 24rpx;
+}
+.drawer-card__cn {
+  display: block;
+  font-size: 38rpx;
+  line-height: 1.06;
+  color: #2a2a2a;
+}
+.drawer-card__en {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 18rpx;
+  color: #8e8e93;
+}
+.drawer-card__slogan {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 22rpx;
+  line-height: 1.7;
+  color: #8e8e93;
+}
+.drawer-card__coords {
+  width: 112rpx;
+  font-size: 18rpx;
+  line-height: 1.5;
+  color: #b0b0b0;
+  text-align: right;
+}
+.saved-entry {
+  margin: 18rpx 8rpx 30rpx;
+  padding: 24rpx 26rpx;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+.saved-entry__mark {
+  font-size: 28rpx;
+  color: #2a2a2a;
+}
+.saved-entry__label {
+  margin-left: 12rpx;
+  font-size: 30rpx;
+  color: #2a2a2a;
+}

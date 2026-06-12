@@ -1,0 +1,155 @@
+.food-page {
+  padding-bottom: 44rpx;
+}
+
+.food-hero {
+  position: relative;
+  height: 41vh;
+  min-height: 560rpx;
+  overflow: hidden;
+  margin: 0 26rpx;
+  border-radius: 0 0 34rpx 34rpx;
+}
+
+.food-hero__image {
+  width: 100%;
+  height: 100%;
+}
+
+.food-hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 12, 12, 0.1), rgba(12, 12, 12, 0.38));
+}
+
+.food-intro {
+  position: relative;
+  z-index: 2;
+  margin: -120rpx 40rpx 0;
+  padding: 32rpx 30rpx 34rpx;
+  border-radius: 30rpx;
+}
+
+.food-intro__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.food-intro__kicker {
+  display: block;
+  font-size: 20rpx;
+  color: #8e8e93;
+  letter-spacing: 6rpx;
+}
+
+.food-intro__city {
+  display: block;
+  font-size: 24rpx;
+  color: #8e8e93;
+}
+
+.food-intro__title {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 70rpx;
+  line-height: 1.04;
+  color: #2a2a2a;
+}
+
+.food-intro__subtitle {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  line-height: 1.92;
+  color: #5c5c5c;
+}
+
+.food-list {
+  margin-top: 38rpx;
+}
+
+.food-category {
+  margin-bottom: 56rpx;
+}
+
+.food-category__header {
+  display: flex;
+  align-items: baseline;
+  gap: 14rpx;
+  padding: 0 6rpx 28rpx;
+}
+
+.food-category__icon {
+  font-size: 36rpx;
+}
+
+.food-category__title {
+  font-size: 48rpx;
+  color: #2a2a2a;
+  line-height: 1.1;
+}
+
+.food-category__count {
+  font-size: 20rpx;
+  color: #8e8e93;
+  letter-spacing: 3rpx;
+  margin-left: 6rpx;
+}
+
+.food-card {
+  margin-bottom: 42rpx;
+  padding: 28rpx;
+}
+
+.food-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.food-card__tag {
+  display: block;
+  font-size: 20rpx;
+  color: #9a9389;
+  letter-spacing: 4rpx;
+}
+
+.food-card__name {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 52rpx;
+  color: #2a2a2a;
+}
+
+.food-card__bookmark {
+  flex-shrink: 0;
+}
+
+.food-card__image {
+  width: 100%;
+  height: 440rpx;
+  margin-top: 24rpx;
+  border-radius: 28rpx;
+}
+
+.food-card__body {
+  padding: 26rpx 4rpx 6rpx;
+}
+
+.food-card__desc {
+  display: block;
+  font-size: 32rpx;
+  line-height: 1.94;
+}
+
+.food-card__note {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 28rpx;
+  line-height: 1.9;
+  color: #7c7c7c;
+  letter-spacing: 2rpx;
+}

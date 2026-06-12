@@ -1,0 +1,81 @@
+<view class="home-page">
+  <view class="home-nav" style="padding-top: {{nav.statusBarHeight}}px;">
+    <view
+      class="home-nav__row"
+      style="height: {{nav.contentHeight}}px; margin-bottom: {{nav.bottomGap}}px;"
+    >
+      <view
+        class="index-trigger"
+        bindtap="openDrawer"
+        style="height: {{nav.contentHeight}}px; width: {{nav.contentHeight}}px;"
+      >
+        <text class="index-trigger__icon">≡</text>
+      </view>
+      <view class="nav-capsule-space" style="width: {{nav.capsuleWidth}}px;"></view>
+    </view>
+  </view>
+
+  <swiper
+    class="cover-swiper"
+    circular
+    current="{{currentIndex}}"
+    bindchange="handleSwiperChange"
+  >
+    <block wx:for="{{cities}}" wx:key="id">
+      <swiper-item>
+        <view class="cover-slide fade-in-up">
+          <view class="cover-stage">
+            <image
+              class="cover-stage__image"
+              src="{{item.coverImage}}"
+              mode="aspectFill"
+              binderror="handleCoverError"
+              data-index="{{index}}"
+            ></image>
+            <view class="cover-stage__veil"></view>
+            <view class="cover-stage__copy">
+              <text class="cover-stage__cn serif-display">{{item.name}}</text>
+              <text class="cover-stage__en serif-display">{{item.englishName}}</text>
+              <text class="cover-stage__slogan">{{item.slogan}}</text>
+              <view class="cover-stage__action" bindtap="handleExplore">
+                <text class="cover-stage__action-text">探索</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="{{drawerClass}}" catchtap="closeDrawer">
+    <view
+      class="drawer-panel"
+      catchtap="preventDrawerClose"
+      bindtouchstart="handleDrawerTouchStart"
+      bindtouchend="handleDrawerTouchEnd"
+    >
+      <view class="drawer-header">
+        <text class="drawer-header__title serif-display">城市目录</text>
+      </view>
+
+      <scroll-view class="drawer-list" scroll-y="true">
+        <block wx:for="{{cities}}" wx:key="id">
+          <view class="drawer-card fade-in-up" bindtap="goToCity" data-city-id="{{item.id}}">
+            <image class="drawer-card__thumb" src="{{item.coverImage}}" mode="aspectFill"></image>
+            <view class="drawer-card__body">
+              <text class="drawer-card__cn serif-display">{{item.name}}</text>
+              <text class="drawer-card__en sans-caption">{{item.englishName}}</text>
+              <text class="drawer-card__slogan">{{item.slogan}}</text>
+            </view>
+            <text class="drawer-card__coords">{{item.coordinates}}</text>
+          </view>
+        </block>
+
+        <view class="saved-entry" bindtap="goToSaved">
+          <text class="saved-entry__mark">✦</text>
+          <text class="saved-entry__label serif-display">我的书签</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

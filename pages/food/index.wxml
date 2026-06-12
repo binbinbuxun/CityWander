@@ -1,0 +1,85 @@
+<view class="page-shell food-page" wx:if="{{city}}">
+  <custom-nav showBack></custom-nav>
+
+  <view class="food-hero fade-in-up">
+    <image class="food-hero__image" src="{{city.heroImage}}" mode="aspectFill"></image>
+    <view class="food-hero__veil"></view>
+  </view>
+
+  <view class="food-intro paper-panel fade-in-up">
+    <view class="food-intro__head">
+      <text class="food-intro__kicker sans-caption">{{city.englishName}}</text>
+      <text class="food-intro__city">{{city.name}}</text>
+    </view>
+    <text class="food-intro__title serif-display">城市风味</text>
+    <text class="food-intro__subtitle">{{city.foodIntro}}</text>
+  </view>
+
+  <view class="section-shell food-list">
+    <!-- 美食分类 -->
+    <view class="food-category fade-in-up">
+      <view class="food-category__header">
+        <text class="food-category__icon">🍽️</text>
+        <text class="food-category__title serif-display">美食</text>
+        <text class="food-category__count sans-caption">{{delicacies.length}} DISHES</text>
+      </view>
+      <block wx:for="{{delicacies}}" wx:key="id">
+        <view class="food-card paper-panel">
+          <view class="food-card__head">
+            <view>
+              <text class="food-card__tag">{{item.tagLine}}</text>
+              <text class="food-card__name serif-display">{{item.name}}</text>
+            </view>
+            <view
+              class="{{item.buttonClass}}"
+              bindtap="handleToggleSaved"
+              data-item-id="{{item.id}}"
+            >
+              <view class="bookmark-mark"></view>
+            </view>
+          </view>
+
+          <image class="food-card__image" src="{{item.image}}" mode="aspectFill"></image>
+
+          <view class="food-card__body">
+            <text class="food-card__desc editor-copy">{{item.desc}}</text>
+            <text wx:if="{{item.note}}" class="food-card__note">{{item.note}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!-- 餐厅分类 -->
+    <view class="food-category fade-in-up">
+      <view class="food-category__header">
+        <text class="food-category__icon">🍴</text>
+        <text class="food-category__title serif-display">餐厅</text>
+        <text class="food-category__count sans-caption">{{restaurants.length}} SPOTS</text>
+      </view>
+      <block wx:for="{{restaurants}}" wx:key="id">
+        <view class="food-card paper-panel">
+          <view class="food-card__head">
+            <view>
+              <text class="food-card__tag">{{item.tagLine}}</text>
+              <text class="food-card__name serif-display">{{item.name}}</text>
+            </view>
+            <view
+              class="{{item.buttonClass}}"
+              bindtap="handleToggleSaved"
+              data-item-id="{{item.id}}"
+            >
+              <view class="bookmark-mark"></view>
+            </view>
+          </view>
+
+          <image class="food-card__image" src="{{item.image}}" mode="aspectFill"></image>
+
+          <view class="food-card__body">
+            <text class="food-card__desc editor-copy">{{item.desc}}</text>
+            <text wx:if="{{item.note}}" class="food-card__note">{{item.note}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

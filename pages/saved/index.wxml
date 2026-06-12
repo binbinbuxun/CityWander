@@ -1,0 +1,63 @@
+<view class="page-shell saved-page">
+  <custom-nav showBack></custom-nav>
+
+  <view class="saved-hero fade-in-up">
+    <text class="saved-hero__title serif-display">我的书签</text>
+    <text wx:if="{{isAuthorized}}" class="saved-hero__subtitle">
+      已经收下 {{totalSaved}} 份让你停下来的城市片段。
+    </text>
+    <text wx:else class="saved-hero__subtitle">
+      使用微信登录，把打动你的城市片段收进私人剪报本。
+    </text>
+  </view>
+
+  <!-- 已登录用户信息卡片 -->
+  <view class="section-shell" wx:if="{{isAuthorized && userProfile}}">
+    <view class="user-card paper-panel fade-in-up">
+      <image class="user-card__avatar" src="{{userProfile.avatarUrl}}" mode="aspectFill"></image>
+      <view class="user-card__info">
+        <text class="user-card__name">{{userProfile.nickName}}</text>
+        <text class="user-card__hint">已通过微信授权登录</text>
+      </view>
+      <view class="user-card__logout" bindtap="handleLogout">
+        <text class="user-card__logout-text">退出</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-shell">
+    <view wx:if="{{!isAuthorized}}" class="saved-login paper-panel fade-in-up">
+      <text class="saved-login__title serif-display">登录后再开始收藏</text>
+      <text class="saved-login__copy editor-copy">
+        点击下方按钮授权微信头像和昵称，即可把故事、美食与风景收进你的私人剪报本。
+      </text>
+      <button class="saved-login__button" bindtap="handleLogin">
+        <text class="saved-login__button-text">微信登录</text>
+      </button>
+      <text class="saved-login__note">仅获取头像与昵称，不会获取其他信息</text>
+    </view>
+
+    <view wx:elif="{{totalSaved === 0}}" class="saved-empty fade-in-up">
+      <text class="empty-copy">把打动你的城市片段，留在这里。</text>
+    </view>
+
+    <view wx:else class="saved-sections">
+      <block wx:for="{{sections}}" wx:key="key">
+        <view class="saved-section fade-in-up">
+          <text class="saved-section__title serif-display">{{item.label}}</text>
+
+          <block wx:for="{{item.items}}" wx:key="id">
+            <view class="saved-card paper-panel" bindtap="openEntry" data-url="{{item.url}}">
+              <image class="saved-card__image" src="{{item.image}}" mode="aspectFill"></image>
+              <view class="saved-card__body">
+                <text class="saved-card__city sans-caption">{{item.cityName}} / {{item.englishName}}</text>
+                <text class="saved-card__title serif-display">{{item.title}}</text>
+                <text class="saved-card__summary">{{item.summary}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

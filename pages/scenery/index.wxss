@@ -1,0 +1,88 @@
+.scenery-page {
+  padding-top: 150rpx;
+}
+
+.scenery-hero {
+  padding: 10rpx 40rpx 42rpx;
+}
+
+.scenery-hero__kicker {
+  display: block;
+  font-size: 22rpx;
+  color: #8e8e93;
+  letter-spacing: 6rpx;
+}
+
+.scenery-hero__title {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 70rpx;
+  color: #2a2a2a;
+}
+
+.scenery-hero__subtitle {
+  display: block;
+  margin-top: 22rpx;
+  width: 76%;
+  font-size: 32rpx;
+  line-height: 1.95;
+  color: #666666;
+  letter-spacing: 2rpx;
+}
+
+.scene-group {
+  margin-bottom: 52rpx;
+}
+
+.scene-group__title {
+  display: block;
+  margin-bottom: 24rpx;
+  font-size: 46rpx;
+  color: #2a2a2a;
+}
+
+.scene-card {
+  padding: 10rpx 0 34rpx;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 26rpx;
+}
+
+.scene-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+}
+
+.scene-card__theme {
+  font-size: 26rpx;
+  color: #8e8e93;
+  letter-spacing: 4rpx;
+}
+
+.scene-card__bookmark {
+  width: 74rpx;
+  height: 74rpx;
+}
+
+.scene-card__image {
+  width: 100%;
+  height: 430rpx;
+  border-radius: 24rpx;
+}
+
+.scene-card__caption {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  line-height: 1.92;
+}
+
+.scene-card__detail {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 28rpx;
+  line-height: 1.9;
+  color: #7c7c7c;
+  letter-spacing: 2rpx;
+}

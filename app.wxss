@@ -1,0 +1,153 @@
+page {
+  background: #f9f8f6;
+  color: #2a2a2a;
+  font-family: "Times New Roman", "PingFang SC", "Hiragino Song GB", "Songti SC", serif;
+}
+
+view,
+text,
+image,
+swiper,
+swiper-item,
+scroll-view {
+  box-sizing: border-box;
+}
+
+image {
+  display: block;
+  width: 100%;
+}
+
+.page-shell {
+  min-height: 100vh;
+  background: #f9f8f6;
+  color: #2a2a2a;
+}
+
+.serif-display {
+  font-family: "Times New Roman", "Georgia", "PingFang SC", "Songti SC", serif;
+}
+
+.sans-caption {
+  font-family: "Arial", "PingFang SC", sans-serif;
+  letter-spacing: 6rpx;
+  text-transform: uppercase;
+}
+
+.editor-copy {
+  font-size: 28rpx;
+  line-height: 1.9;
+  letter-spacing: 2rpx;
+  color: #353535;
+}
+
+.editor-kicker {
+  font-size: 22rpx;
+  color: #8e8e93;
+  letter-spacing: 6rpx;
+  text-transform: uppercase;
+}
+
+.paper-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-radius: 32rpx;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.section-shell {
+  padding: 0 40rpx 90rpx;
+}
+
+.fade-in-up {
+  animation: fadeInUp 720ms ease both;
+}
+
+.bookmark-button {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 0.5px solid rgba(200, 180, 160, 0.4);
+  background: rgba(255, 250, 245, 0.75);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.32s ease;
+}
+
+.bookmark-button--saved {
+  background: rgba(190, 115, 70, 0.88);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-color: rgba(210, 140, 85, 0.5);
+  box-shadow: 0 6rpx 22rpx rgba(160, 90, 50, 0.3);
+}
+
+.bookmark-button.is-pulse {
+  animation: bookmarkPulse 320ms ease;
+}
+
+.bookmark-mark {
+  font-size: 38rpx;
+  line-height: 1;
+  color: #b07850;
+  text-align: center;
+}
+
+.bookmark-mark::after {
+  content: "♡";
+}
+
+.bookmark-button--saved .bookmark-mark {
+  color: #fefaf6;
+}
+
+.bookmark-button--saved .bookmark-mark::after {
+  content: "♥";
+}
+
+.headline-note {
+  font-size: 24rpx;
+  color: #8e8e93;
+  line-height: 1.8;
+  letter-spacing: 3rpx;
+}
+
+.empty-copy {
+  font-size: 28rpx;
+  color: #8e8e93;
+  line-height: 1.8;
+  letter-spacing: 3rpx;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28rpx);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bookmarkPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

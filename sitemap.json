@@ -1,0 +1,9 @@
+{
+  "desc": "City Wander sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Dependency directories
+node_modules/
+miniprogram_npm/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Local IDE / editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WeChat Mini Program local config
+project.private.config.json
+
+# Local tooling / temporary files
+.claude/
+*.tmp
+*.temp

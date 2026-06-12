@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/city/index",
+    "pages/story/index",
+    "pages/food/index",
+    "pages/scenery/index",
+    "pages/saved/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#F9F8F6",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "custom-nav": "/components/custom-nav/index"
+  }
+}

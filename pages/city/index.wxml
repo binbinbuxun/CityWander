@@ -1,0 +1,49 @@
+<view class="page-shell city-page" wx:if="{{city}}">
+  <custom-nav light transparent></custom-nav>
+
+  <view class="city-hero fade-in-up">
+    <swiper class="city-hero__swiper" circular indicator-dots autoplay interval="4200" duration="550">
+      <block wx:for="{{heroImages}}" wx:key="index">
+        <swiper-item>
+          <image class="city-hero__image" src="{{item}}" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="city-hero__veil"></view>
+    <view class="city-hero__copy">
+      <text class="city-hero__cn serif-display">{{city.name}}</text>
+      <text class="city-hero__en serif-display">{{city.englishName}}</text>
+      <text class="city-hero__slogan">{{city.slogan}}</text>
+    </view>
+  </view>
+
+  <view class="city-body">
+    <view class="city-intro paper-panel fade-in-up">
+      <text class="editor-kicker sans-caption">City Note</text>
+      <text class="city-intro__title serif-display">{{city.introTitle}}</text>
+      <block wx:for="{{city.introParagraphs}}" wx:key="index">
+        <text class="city-intro__copy editor-copy">{{item}}</text>
+      </block>
+      <text class="city-intro__coords">{{city.coordinates}}</text>
+    </view>
+
+    <view class="topic-list">
+      <block wx:for="{{topicCards}}" wx:key="key">
+        <view
+          class="topic-card paper-panel fade-in-up"
+          bindtap="openTopic"
+          data-url="{{item.url}}"
+        >
+          <image class="topic-card__image" src="{{item.image}}" mode="aspectFill"></image>
+          <view class="topic-card__veil"></view>
+          <view class="topic-card__body">
+            <text class="topic-card__serial">{{item.serial}}</text>
+            <text class="topic-card__english sans-caption">{{item.english}}</text>
+            <text class="topic-card__title serif-display">{{item.title}}</text>
+            <text class="topic-card__blurb">{{item.blurb}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

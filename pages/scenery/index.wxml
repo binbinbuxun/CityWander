@@ -1,0 +1,36 @@
+<view class="page-shell scenery-page" wx:if="{{city}}">
+  <custom-nav showBack></custom-nav>
+
+  <view class="scenery-hero fade-in-up">
+    <text class="scenery-hero__kicker sans-caption">{{city.englishName}}</text>
+    <text class="scenery-hero__title serif-display">城市风景</text>
+    <text class="scenery-hero__subtitle">{{city.sceneryIntro}}</text>
+  </view>
+
+  <view class="section-shell">
+    <block wx:for="{{groups}}" wx:key="title">
+      <view class="scene-group fade-in-up">
+        <text class="scene-group__title serif-display">{{item.title}}</text>
+
+        <block wx:for="{{item.items}}" wx:key="id">
+          <view class="scene-card">
+            <view class="scene-card__top">
+              <text class="scene-card__theme">{{item.theme}}</text>
+              <view
+                class="{{item.buttonClass}}"
+                bindtap="handleToggleSaved"
+                data-item-id="{{item.id}}"
+              >
+                <view class="bookmark-mark"></view>
+              </view>
+            </view>
+
+            <image class="scene-card__image" src="{{item.image}}" mode="aspectFill"></image>
+            <text class="scene-card__caption editor-copy">{{item.caption}}</text>
+            <text wx:if="{{item.detail}}" class="scene-card__detail">{{item.detail}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
